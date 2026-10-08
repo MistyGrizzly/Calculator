@@ -1,5 +1,8 @@
 package com.example.calculator;
 
+import org.mozilla.javascript.Context;
+import org.mozilla.javascript.Scriptable;
+
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -24,6 +27,7 @@ public class MainActivity extends AppCompatActivity {
             return insets;
         });
 
+        TextView solutionView = findViewById(R.id.solutionText);
         TextView calcView = findViewById(R.id.calcView);
 
         /*
@@ -33,7 +37,9 @@ public class MainActivity extends AppCompatActivity {
         buttonEql.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
-                // action for Divide
+                String equation = calcView.getText().toString();
+                solutionView.setText(equation);
+                calcView.setText(results(equation));
             }
         });
 
@@ -44,7 +50,8 @@ public class MainActivity extends AppCompatActivity {
         buttonAC.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
-                // action for All Clear
+                calcView.setText("");
+                solutionView.setText("0");
             }
         });
 
@@ -234,5 +241,28 @@ public class MainActivity extends AppCompatActivity {
                 calcView.append("0");
             }
         });
+
+        /*
+            Dot Digit Button
+         */
+        Button buttonDot = findViewById(R.id.buttonDeci);
+        button0.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v){
+                calcView.append(".");
+            }
+        });
+    }
+
+    String results(String equation){
+        try{
+            Context context = Context.enter();
+            context.setOptimizationLevel(-1);
+            Scriptable scriptable = context.initStandardObjects();
+            return context.evaluateString(scriptable, equation, "Javascript", 1, null).toString();
+        }catch (Exception e){
+            return "Err";
+        }
+
     }
 }

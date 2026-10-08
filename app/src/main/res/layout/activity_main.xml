@@ -365,24 +365,30 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.205" />
 
-    <EditText
-        android:id="@+id/editTextText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="211dp"
+    <TextView
+        android:id="@+id/solutionText"
+        android:layout_width="410dp"
+        android:layout_height="60dp"
         android:layout_marginTop="32dp"
-        android:layout_marginEnd="15dp"
-        android:layout_marginBottom="30dp"
+        android:background="#FAF8F8"
         android:ems="10"
         android:inputType="text"
-        android:text="Jane Whitmore"
+        android:text="0"
         android:textAlignment="viewEnd"
-        android:textSize="24sp"
+        android:textSize="34sp"
         app:layout_constraintBottom_toTopOf="@+id/calcView"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.797"
+        app:layout_constraintHorizontal_bias="0.838"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintVertical_bias="1.0" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="154dp"
+        android:layout_height="32dp"
+        android:text="Jane Whitmore"
+        tools:layout_editor_absoluteX="241dp"
+        tools:layout_editor_absoluteY="16dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
