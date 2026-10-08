@@ -387,8 +387,14 @@
         android:id="@+id/textView"
         android:layout_width="154dp"
         android:layout_height="32dp"
+        android:layout_marginStart="241dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"
         android:text="Jane Whitmore"
-        tools:layout_editor_absoluteX="241dp"
-        tools:layout_editor_absoluteY="16dp" />
+        app:layout_constraintBottom_toTopOf="@+id/solutionText"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

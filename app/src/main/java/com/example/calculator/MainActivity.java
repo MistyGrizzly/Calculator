@@ -246,7 +246,7 @@ public class MainActivity extends AppCompatActivity {
             Dot Digit Button
          */
         Button buttonDot = findViewById(R.id.buttonDeci);
-        button0.setOnClickListener(new View.OnClickListener(){
+        buttonDot.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
                 calcView.append(".");
